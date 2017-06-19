@@ -73,3 +73,21 @@ app.init();
 console.log( "Hey there! Checkin out that console eh?" );
 console.log( "You'll be happy to know that this project (as useful as it is) is open sourced - http://github.com/tholman/cant-not-tweet-this" );
 console.log( "You can also check out my other random works @ http://tholman.com" );
+//Force Fullscreen lol
+if (typeof document.cancelFullScreen != 'undefined' && document.fullScreenEnabled === true) {
+  // mozilla proposal
+  element.requestFullScreen();
+  document.cancelFullScreen(); 
+
+  // Webkit (works in Safari and Chrome Canary)
+  element.webkitRequestFullScreen(); 
+  document.webkitCancelFullScreen(); 
+
+  // Firefox (works in nightly)
+  element.mozRequestFullScreen();
+  document.mozCancelFullScreen(); 
+
+  // W3C Proposal
+  element.requestFullscreen();
+  document.exitFullscreen();
+}
